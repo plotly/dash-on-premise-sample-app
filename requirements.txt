@@ -1,5 +1,5 @@
 dash==0.21.0
-dash-auth==0.0.12-rc1
+dash-auth==0.1.0rc2
 dash-renderer==0.11.3
 dash-core-components==0.21.0
 dash-html-components==0.9.0
