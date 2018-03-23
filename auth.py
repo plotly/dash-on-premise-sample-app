@@ -77,5 +77,5 @@ def auth(app):
             app,
             config.DASH_APP_NAME,
             config.DASH_APP_PRIVACY,
-            APP_URL
+            [APP_URL, 'http://localhost:8050', 'http://127.0.0.1:8050']
         )
