@@ -25,9 +25,10 @@ DASH_APP_PRIVACY = 'public'
 # users use this option.
 PATH_BASED_ROUTING = True
 
-###########################################################################
-# Only fill out this next section if DASH_APP_PRIVACY is set to 'private' #
-###########################################################################
+# # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # #
+# This section only needs to be filled out                                #
+# if DASH_APP_PRIVACY is set to 'private'                                 #
+# # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # #
 
 # Fill in with your Plotly On-Premise username
 os.environ['PLOTLY_USERNAME'] = 'your-plotly-username'

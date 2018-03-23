@@ -5,10 +5,10 @@ import urllib3
 
 import config
 
-########################################################################
+# # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # #
 # This file provides an interface to the `plotly_auth` library
 # You do not need to edit this file
-########################################################################
+# # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # #
 
 def auth(app):
     if 'DYNO' in os.environ:
@@ -46,15 +46,15 @@ def auth(app):
                 )
 
         if os.environ['PLOTLY_API_KEY'] == 'your-plotly-api-key':
-             raise Exception(''
+             raise Exception(
                 'Please enter the your Plotly API key inside config.py')
 
         if os.environ['PLOTLY_USERNAME'] == 'your-plotly-username':
-             raise Exception(''
+             raise Exception(
                 'Please enter the your Plotly username inside config.py')
 
         if os.environ['PLOTLY_DOMAIN'] == 'https://your-plotly-domain.com':
-             raise Exception(''
+             raise Exception(
                 'Please enter the your Plotly domain inside config.py')
 
         if os.environ['PLOTLY_SSL_VERIFICATION'] == 'False':
