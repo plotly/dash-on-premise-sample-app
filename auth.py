@@ -18,7 +18,6 @@ def auth(app):
             DASH_APP_PRIVACY: {DASH_APP_PRIVACY}
             PATH_BASED_ROUTING: {PATH_BASED_ROUTING}
             PLOTLY_USERNAME: {PLOTLY_USERNAME}
-            PLOTLY_API_KEY: {PLOTLY_API_KEY}
             PLOTLY_DOMAIN: {PLOTLY_DOMAIN}
             PLOTLY_API_DOMAIN: {PLOTLY_API_DOMAIN}
             PLOTLY_DASH_DOMAIN: {PLOTLY_DASH_DOMAIN}
@@ -28,7 +27,6 @@ def auth(app):
             DASH_APP_PRIVACY=config.DASH_APP_PRIVACY,
             PATH_BASED_ROUTING=config.PATH_BASED_ROUTING,
             PLOTLY_USERNAME=os.environ['PLOTLY_USERNAME'],
-            PLOTLY_API_KEY=os.environ['PLOTLY_API_KEY'],
             PLOTLY_DOMAIN=os.environ['PLOTLY_DOMAIN'],
             PLOTLY_API_DOMAIN=os.environ['PLOTLY_API_DOMAIN'],
             PLOTLY_DASH_DOMAIN=config.PLOTLY_DASH_DOMAIN,
