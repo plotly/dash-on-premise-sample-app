@@ -1,0 +1,18 @@
+/* Tables
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+
+table {
+  border-collapse: collapse;
+  width: 100%;
+}
+th {
+  text-align: left;
+  font-weight: normal; }
+td {
+  white-space: nowrap; }
+th:first-child,
+td:first-child {
+  padding-left: 0; }
+th:last-child,
+td:last-child {
+  padding-right: 0; }
