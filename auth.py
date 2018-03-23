@@ -32,18 +32,20 @@ def auth(app):
             PLOTLY_DASH_DOMAIN=config.PLOTLY_DASH_DOMAIN,
             PLOTLY_SSL_VERIFICATION=os.environ['PLOTLY_SSL_VERIFICATION']
         )))
-    if config.DASH_APP_PRIVACY == 'private':
-        # Checks if running inside Plotly On-Premise environment
-        if 'DYNO' in os.environ:
-            if config.PATH_BASED_ROUTING:
-                if config.DASH_APP_NAME == 'name-of-your-dash-app':
-                     raise Exception(
-                        'Please enter the name of your' +
-                        ' dash app inside config.py')
-                app.config.requests_pathname_prefix = '/{}/'.format(
-                    config.DASH_APP_NAME
-                )
 
+    # Configure path-based routing
+    if 'DYNO' in os.environ:
+        if config.PATH_BASED_ROUTING:
+            if config.DASH_APP_NAME == 'name-of-your-dash-app':
+                 raise Exception(
+                    'Please enter the name of your' +
+                    ' dash app inside config.py')
+            app.config.requests_pathname_prefix = '/{}/'.format(
+                config.DASH_APP_NAME
+            )
+
+    # Configure private auth
+    if config.DASH_APP_PRIVACY == 'private':
         if os.environ['PLOTLY_API_KEY'] == 'your-plotly-api-key':
              raise Exception(
                 'Please enter the your Plotly API key inside config.py')
