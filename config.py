@@ -8,10 +8,10 @@ import os
 # Dash App Manager
 DASH_APP_NAME = 'name-of-your-dash-app'
 
-# Set to `private` if you want to add a login screen to your app
+# Set to 'private' if you want to add a login screen to your app
 # You can provision who can view the app in your list of files
 # at <your-plotly-server>/organize.
-# Set to `public` if you want your app to be accessible to
+# Set to 'public' if you want your app to be accessible to
 # anyone who has access to your Plotly server on your network without
 # a login screen.
 DASH_APP_PRIVACY = 'public'
@@ -38,7 +38,7 @@ os.environ['PLOTLY_USERNAME'] = 'your-plotly-username'
 # If you have already created a key and saved it on your own machine
 # (from the Plotly-Python library instructions at https://plot.ly/python/getting-started)
 # then you can view that key in your ~/.plotly/.config file
-# or by running the following commands in a Python session:
+# or inside a Python session with these commands:
 # import plotly
 # print(plotly.tools.get_config_file())
 os.environ['PLOTLY_API_KEY'] = 'your-plotly-api-key'

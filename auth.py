@@ -11,6 +11,7 @@ import config
 # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # #
 
 def auth(app):
+    # Print info for debugging
     if 'DYNO' in os.environ:
         print(dedent('''
             DASH_APP_NAME: {DASH_APP_NAME}
