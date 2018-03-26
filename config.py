@@ -9,7 +9,7 @@ import os
 DASH_APP_NAME = 'name-of-your-dash-app'
 
 # Set to 'private' if you want to add a login screen to your app
-# You can provision who can view the app in your list of files
+# You can choose who can view the app in your list of files
 # at <your-plotly-server>/organize.
 # Set to 'public' if you want your app to be accessible to
 # anyone who has access to your Plotly server on your network without
