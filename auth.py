@@ -38,7 +38,7 @@ def auth(app):
         if config.PATH_BASED_ROUTING:
             if config.DASH_APP_NAME == 'name-of-your-dash-app':
                  raise Exception(
-                    'Please enter the name of your' +
+                    'Please enter the name of your'
                     ' dash app inside config.py')
             app.config.requests_pathname_prefix = '/{}/'.format(
                 config.DASH_APP_NAME
