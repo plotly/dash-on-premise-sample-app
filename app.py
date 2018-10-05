@@ -2,6 +2,8 @@ import os
 import tempfile
 from contextlib import contextmanager
 
+from impala.dbapi import connect
+
 import dash
 from dash.dependencies import Input, Output
 import dash_core_components as dcc
@@ -73,10 +75,30 @@ def kerberos_auth():
 @app.callback(Output('graph', 'figure'),
               [Input('dropdown', 'value')])
 def update_graph(value):
+    # This context manager must be used with any function/method calls that use
+    # Kerberos. If there's more than one, we recommend enclosing all of them
+    # in the same "with" statement to avoid duplicate ccache retrievals.
+    with kerberos_auth():
+        conn = connect(host='quickstart.cloudera', port=21050,
+                       auth_mechanism='GSSAPI', kerberos_service_name='impala',
+                       database='poc')
+
+    cursor = conn.cursor()
+    cursor.execute('SELECT x, y FROM t3;')
+
+    print(cursor.description)  # prints the result set's schema
+
+    x = []
+    y = []
+
+    for row in cursor.fetchall():
+        x.append(row[0])
+        y.append(row[1])
+
     return {
         'data': [{
-            'x': [1, 2, 3, 4, 5, 6],
-            'y': [3, 1, 2, 3, 5, 6]
+            'x': x,
+            'y': y,
         }],
         'layout': {
             'title': value,
