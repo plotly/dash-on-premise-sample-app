@@ -12,7 +12,7 @@ from utils import StaticUrlPath
 app = dash.Dash(
     __name__,
 )
-auth(app)
+dash_auth = auth(app)
 
 server = app.server  # Expose the server variable for deployments
 
