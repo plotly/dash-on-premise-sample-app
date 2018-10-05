@@ -1,3 +1,7 @@
+import os
+import tempfile
+from contextlib import contextmanager
+
 import dash
 from dash.dependencies import Input, Output
 import dash_core_components as dcc
@@ -38,6 +42,33 @@ app.layout = html.Div(className='container', children=[
         ])
     ])
 ])
+
+
+@contextmanager
+def kerberos_auth():
+    ticket_cache = dash_auth.get_kerberos_ticket_cache()
+
+    # Remove group and other permissions for the ccache file:
+    os.umask(0o077)
+
+    with tempfile.NamedTemporaryFile() as ccache:
+        ccache.write(ticket_cache)
+        ccache.flush()
+
+        # Use the temporary file as our ccache. This avoids having a global
+        # ccache file. If the Kerberos library you're using requires you to
+        # use a global ccache file (i.e. if KRB5CCNAME does not work),
+        # be sure to configure the app to only accept one request at a time
+        # per container.
+        os.environ['KRB5CCNAME'] = 'FILE:{}'.format(ccache.name)
+
+        yield
+
+    # The temporary ccache file is automatically deleted by
+    # NamedTemporaryFile(). If you need to use a global ccache file,
+    # remove it here. We also recommend removing it at the start of every
+    # request for added safety.
+
 
 @app.callback(Output('graph', 'figure'),
               [Input('dropdown', 'value')])

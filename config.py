@@ -58,3 +58,8 @@ PLOTLY_DASH_DOMAIN='https://your-dash-manager-plotly-domain.com'
 # then you can set this to False. Note that self-signed certificates are not
 # safe for production.
 os.environ['PLOTLY_SSL_VERIFICATION'] = 'True'
+
+# Configure Kerberos using a file we control. (Customize this file
+# based on your site needs.) Using the path shown, the file needs to be
+# in the root directory of your app repo.
+os.environ['KRB5_CONFIG'] = '/app/krb5.conf'
