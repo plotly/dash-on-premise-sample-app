@@ -62,6 +62,9 @@ def kerberos_auth():
         # use a global ccache file (i.e. if KRB5CCNAME does not work),
         # be sure to configure the app to only accept one request at a time
         # per container.
+
+        # Also note that modifying the process environment is not thread safe,
+        # so avoid running multiple gunicorn threads. (This is the default.)
         os.environ['KRB5CCNAME'] = 'FILE:{}'.format(ccache.name)
 
         yield
