@@ -1,0 +1,3 @@
+libsasl2-dev
+libkrb5-dev
+libsasl2-modules-gssapi-heimdal

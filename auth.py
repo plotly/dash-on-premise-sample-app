@@ -76,7 +76,7 @@ def auth(app):
                 config.PLOTLY_DASH_DOMAIN.split('://')[1].strip('/')
             )
 
-        dash_auth.PlotlyAuth(
+        return dash_auth.PlotlyAuth(
             app,
             config.DASH_APP_NAME,
             config.DASH_APP_PRIVACY,
