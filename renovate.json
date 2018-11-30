@@ -1,0 +1,6 @@
+{
+    "extends": [
+        "group:all"
+    ],
+    "schedule": "before 3am on Monday"
+}
