@@ -1,5 +1,5 @@
 dash==0.32.2
 dash-core-components==0.42.0
-dash-html-components==0.13.4
+dash-html-components==0.15.0
 plotly
 gunicorn
