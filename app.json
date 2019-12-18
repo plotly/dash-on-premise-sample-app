@@ -1,0 +1,7 @@
+{
+  "scripts": {
+    "dokku": {
+      "predeploy": "bash /app/setup_oracle"
+    }
+  }
+}

@@ -1,0 +1,8 @@
+#!/bin/bash -x
+
+mkdir -p /opt/oracle
+cd /opt/oracle
+unzip /app/instantclient*.zip
+
+echo /opt/oracle/instantclient_12_2 > /etc/ld.so.conf.d/oracle-instantclient.conf
+ldconfig
