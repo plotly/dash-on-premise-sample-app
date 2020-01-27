@@ -20,7 +20,7 @@ app.layout = html.Div(className='container', children=[
         Column(width=4, children=[
             dcc.Dropdown(
                 id='dropdown',
-                options=[{'label': i, 'value': i} for i in ['LA', 'NYC', 'MTL']],
+                options=[{'label': i, 'value': i} for i in ['KECH', 'LA', 'NYC', 'MTL']],
                 value='LA'
             )
         ]),
