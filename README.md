@@ -1,3 +1,7 @@
+## Deprecation Notice
+
+Please note as of Dash Enterprise 3.3.x documentation can be accessed directly on the Dash Enterprise platform via the Usage and Guides tab. Sample applications and templates are available at https://YOUR-DASH-ENTERPRISE-URL/Docs/templates.
+
 ## Dash On-Premise Sample App Versions 3.0.0+
 
 This repository contains a simple Dash app that can be deployed as-is on your [Dash Deployment Server](https://plot.ly/dash/pricing/) server. This application is configured to deploy on Dash Deployment Server versions 3.0.0
