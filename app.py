@@ -4,6 +4,13 @@ import dash_core_components as dcc
 import dash_html_components as html
 
 from components import Column, Header, Row
+import pyodbc
+import os
+
+try:
+    print(os.listdir('/opt/microsoft/msodbcsql17/lib64'))
+except:
+    print('sql server driver not found')
 
 app = dash.Dash(
     __name__

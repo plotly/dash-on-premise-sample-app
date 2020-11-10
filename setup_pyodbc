@@ -1,0 +1,6 @@
+curl https://packages.microsoft.com/ubuntu/16.04/prod/pool/main/m/msodbcsql17/msodbcsql17_17.3.1.1-1_amd64.deb --output msodbcsql17_17.3.1.1-1_amd64.deb
+
+ACCEPT_EULA=Y dpkg -i msodbcsql17_17.3.1.1-1_amd64.deb
+
+cp /app/odbc.ini /etc/odbc.ini
+cp /app/odbcinst.ini /etc/odbcinst.ini
