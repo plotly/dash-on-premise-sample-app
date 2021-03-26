@@ -1,3 +1,4 @@
+import flask
 import dash
 from dash.dependencies import Input, Output
 import dash_core_components as dcc
@@ -10,6 +11,12 @@ app = dash.Dash(
 )
 
 server = app.server  # Expose the server variable for deployments
+
+@server.route('/post', methods=['POST'])
+def receive_post():
+    l = len(flask.request.form['count_me'])
+    return(f"length: {l}")
+
 
 # Standard Dash app code below
 app.layout = html.Div(className='container', children=[
