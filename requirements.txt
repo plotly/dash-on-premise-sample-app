@@ -1,4 +1,4 @@
-dash==1.16.3
+dash==1.21.0
 plotly
 gunicorn
 dash-design-kit
